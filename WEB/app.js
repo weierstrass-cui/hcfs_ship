@@ -4,12 +4,9 @@ var http = require('http'),
 	url = require('url'),
 	querystring = require('querystring'),
 	mysql = require('mysql');
-var option = {
-	host: 'localhost',
-	user: 'root',
-	password: '',
-	database: 'ship'
-};
+var configs = require('./config.js'),
+	option = config.dbOption;
+
 var createConnection = function(){
 	return (mysql.createConnection({
 		host: option.host,
