@@ -1,10 +1,12 @@
 <div id="product">
     <span class="location">{{currentUser.username}}</span>
+    <img src="./images/jg.png" class="jiange" />
     <div class="roomConfig" ng-repeat="item in roomConfig">
         <span class="roomConfigHeader">{{item.name}}</span>
         <ul>
             <li ng-repeat="room in item.config" ng-show="room.total > 0">
-                <div class="roomName">{{room.type}}人间<span>(剩余{{room.remain}}间)</span></div>
+                <div class="roomName">{{room.type}}人间</div>
+                <div class="remain">余：{{room.remain}}</div>
                 <div class="numSet">
                     <a href="javascript://" ng-click="fn.minus(room);"> - </a>
                     <input type="text" ng-model="room.order" ng-blur="fn.checkNum(room);" />
@@ -13,6 +15,7 @@
             </li>
         </ul>
         <span class="roomConfigFooter"></span>
+        <!-- <img src="./images/jg.png" class="jiange" /> -->
     </div>
     <a href="javascript://" class="submit" ng-click="fn.checkOrder();">
         <img src="./images/submit.png" /><span>提交</span>
