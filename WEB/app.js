@@ -5,7 +5,7 @@ var http = require('http'),
 	querystring = require('querystring'),
 	mysql = require('mysql');
 var configs = require('./config.js'),
-	option = config.dbOption;
+	option = configs.dbOption;
 
 var createConnection = function(){
 	return (mysql.createConnection({
