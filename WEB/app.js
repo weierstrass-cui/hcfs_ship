@@ -152,6 +152,30 @@ var queryFunctions = {
 		}catch(e){
 			sendResponse(httpResponse, '', 'N', '系统错误');
 		}
+	},
+	'/getOrderLogs': function(httpResponse){
+		try{
+			var connection = createConnection();
+			var sql = 'select f.city, e.name, f.type, f.order, f.time from hcfs_room e join (';
+				sql += 'select c.rid, c.type, d.city, d.order, d.time from hcfs_room_count c join (';
+				sql += 'select b.city, a.rid, a.order, a.time from hcfs_orders a ';
+				sql += '	join hcfs_user b on a.uid = b.id';
+				sql += ') d on c.id = d.rid';
+				sql += ') f on e.id = f.rid';
+			connection.query(sql, function(selectErr, selectResult){
+				if( selectErr ){
+					return;
+				}
+				if( selectResult.length ){
+					sendResponse(httpResponse, selectResult, 'Y');
+				}else{
+					sendResponse(httpResponse, '', 'N', '查无记录');
+				}
+				connection.end();
+			});
+		}catch(e){
+			sendResponse(httpResponse, '', 'N', '系统错误');
+		}
 	}
 }
 

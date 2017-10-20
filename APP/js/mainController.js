@@ -42,6 +42,12 @@
 			$mainService.getAllRoomConfig({}, function(res){
 				$scope.roomConfig = res;
 			});
+			$mainService.getOrderLogs({}, function(res){
+				for(var i in res){
+					res[i].time = new Date(res[i].time - 0).toJSON();
+				}
+				$scope.orderLogList = res;
+			});
 		}
 	]);
 	mainCtrl.controller('productController', ['$scope', '$mainService', '$storage',

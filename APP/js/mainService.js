@@ -13,6 +13,9 @@
 			},
 			doOrder: function(json, callback){
 				request.post('/doOrder', json, callback);
+			},
+			getOrderLogs: function(json, callback){
+				request.post('/getOrderLogs', json, callback);
 			}
 		}
 	}]);
