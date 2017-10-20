@@ -1,0 +1,36 @@
+<div id="product">
+    <span class="location">{{currentUser.username}}</span>
+    <div class="roomConfig" ng-repeat="item in roomConfig">
+        <span class="roomConfigHeader">{{item.name}}</span>
+        <ul>
+            <li ng-repeat="room in item.config" ng-show="room.total > 0">
+                <div class="roomName">{{room.type}}人间<span>(剩余{{room.remain}}间)</span></div>
+                <div class="numSet">
+                    <a href="javascript://" ng-click="fn.minus(room);"> - </a>
+                    <input type="text" ng-model="room.order" ng-blur="fn.checkNum(room);" />
+                    <a href="javascript://" ng-click="fn.plus(room);"> + </a>
+                </div>
+            </li>
+        </ul>
+        <span class="roomConfigFooter"></span>
+    </div>
+    <a href="javascript://" class="submit" ng-click="fn.checkOrder();">
+        <img src="./images/submit.png" /><span>提交</span>
+    </a>
+    <div ng-show="popWin" class="popWin">
+        <div class="popWinMain">
+            <div class="title">您预定了以下房间：</div>
+            <div class="main">
+                <ul>
+                    <li ng-repeat="item in orderList">
+                        {{item.name}} {{item.type}}人间 - {{item.order}}间
+                    </li>
+                </ul>
+            </div>
+            <div class="popWinContral">
+                <a href="javascript://" ng-click="popWin=false;">取消</a>
+                <a href="javascript://" ng-click="fn.doOrder();">确定</a>
+            </div>
+        </div>
+    </div>
+</div>

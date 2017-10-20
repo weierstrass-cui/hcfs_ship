@@ -1,0 +1,12 @@
+<div id="admin">
+    <ul>
+    	<li>
+    		<span>房型</span>
+    		<span>数量</span>
+    	</li>
+    	<li ng-repeat="item in roomConfig">
+    		<span>{{item.name}} {{item.type}}人间</span>
+    		<span>{{item.remain}} / {{item.total}}</span>
+    	</li>
+    </ul>
+</div>

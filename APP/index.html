@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>天海游轮</title>
+    <link href="lib/font/font-awesome.css" rel="stylesheet">
+    <link href="lib/weui/weui.min.css" rel="stylesheet">
+    <!-- 工作css -->
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/commonController.js"></script>
+    <script src="js/commonService.js"></script>
+    <script src="js/mainController.js"></script>
+    <script src="js/mainService.js"></script>
+</head>
+<body ng-app="starter" ng-controller="main" class="view-container">
+    <div class="container view-frame" id="container" ng-view></div>
+    <!-- Loading Toast -->
+    <div id="loadingToast" class="weui_loading_toast" ng-show="isLoadingData">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <div class="weui_loading">
+                <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+            </div>
+            <p class="weui_toast_content">数据加载中</p>
+        </div>
+    </div>
+    <!-- Alert Msg -->
+    <div class="weui_dialog_alert" ng-show="isAlert">
+        <div class="weui_mask"></div>
+        <div class="weui_dialog">
+            <div class="weui_dialog_hd"><strong class="weui_dialog_title">{{alertTitle}}</strong></div>
+            <div class="weui_dialog_bd">{{alertMessage}}</div>
+            <div class="weui_dialog_ft">
+                <a href="javascript://" ng-click="alertAction.success();" class="weui_btn_dialog primary">确定</a>
+            </div>
+        </div>
+    </div>
+    <!-- Confirm Msg -->
+    <div class="weui_dialog_confirm" ng-show="isConfirm">
+        <div class="weui_mask"></div>
+        <div class="weui_dialog">
+            <div class="weui_dialog_hd"><strong class="weui_dialog_title">{{confirmTitle}}</strong></div>
+            <div class="weui_dialog_bd">{{confirmMessage}}</div>
+            <div class="weui_dialog_ft">
+                <a href="javascript://" class="weui_btn_dialog default" ng-click="confirmAction.cancel();">取消</a>
+                <a href="javascript://" class="weui_btn_dialog primary" ng-click="confirmAction.success();">确定</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
