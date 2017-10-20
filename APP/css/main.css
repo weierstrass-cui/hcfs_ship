@@ -101,7 +101,7 @@ input[type="date"].emptyDate:before, input.localDateTime.emptyDate:before{ conte
 .roomConfig ul li .numSet input{background:#fff;width:40px;height:30px;text-align:center;color:#000;border:1px solid #fff;font-size:1.6rem;}
 .roomConfig ul li .numSet a{background:#fff;width:30px;height:30px;line-height:30px;text-align:center;display:inline-block;color:#000;font-size:1.6rem;border-radius:5px;} 
 .jiange{width:50%;display:block;margin:0 auto 1rem;}
-#product .submit{width:90%;margin:0 auto;position:relative;display:block;text-align:center;}
+#product .submit{width:90%;margin:0 auto 1rem;position:relative;display:block;text-align:center;}
 #product .submit img{width:100%;}
 #product .submit span{position:absolute;width:50px;height:30px;line-height:30px;display:block;top:50%;left:50%;margin:-15px 0 0 -25px;font-size:1.6rem;color:#5f3e20;}
 #product .location{background:url(../images/location.png) no-repeat;position:absolute;color:#999;right:2rem;top:1rem;font-size:1.6rem;height:25px;line-height:25px;background-size:auto 100%;text-indent:1.8rem;font-weight:bold;}

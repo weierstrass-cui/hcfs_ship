@@ -48,28 +48,30 @@
 		function($scope, $mainService, $storage){
 			var user = JSON.parse($storage.getLocalStorage('HCFS_user'));
 			$scope.currentUser = user;
-			
-			$mainService.getAllRoomConfig({}, function(res){
-				var roomConfigCache = {}, roomConfig = [];
-				for(var i in res){
-					roomConfigCache[res[i].name] = roomConfigCache[res[i].name] || [];
-					roomConfigCache[res[i].name].push({
-						id: res[i].id,
-						name: res[i].name,
-						type: res[i].type,
-						total: res[i].total,
-						remain: res[i].remain,
-						order: 0
-					});
-				}
-				for(var i in roomConfigCache){
-					roomConfig.push({
-						name: i,
-						config: roomConfigCache[i]
-					});
-				}
-				$scope.roomConfig = roomConfig;
-			});
+			var resetRoom = function(){
+				$mainService.getAllRoomConfig({}, function(res){
+					var roomConfigCache = {}, roomConfig = [];
+					for(var i in res){
+						roomConfigCache[res[i].name] = roomConfigCache[res[i].name] || [];
+						roomConfigCache[res[i].name].push({
+							id: res[i].id,
+							name: res[i].name,
+							type: res[i].type,
+							total: res[i].total,
+							remain: res[i].remain,
+							order: 0
+						});
+					}
+					for(var i in roomConfigCache){
+						roomConfig.push({
+							name: i,
+							config: roomConfigCache[i]
+						});
+					}
+					$scope.roomConfig = roomConfig;
+				});
+			}
+			resetRoom();
 
 			$scope.fn = {
 				minus: function(room){
@@ -123,6 +125,7 @@
 								$scope.commonFn.alertMsg('', '恭喜您预订成功');
 							}
 							$scope.popWin = false;
+							resetRoom();
 						});
 					}
 				}
