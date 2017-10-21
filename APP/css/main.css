@@ -119,4 +119,4 @@ input[type="date"].emptyDate:before, input.localDateTime.emptyDate:before{ conte
 .myOrderList .orderTotal li{width:100%;overflow:hidden;height:30px;}
 .myOrderList .orderTotal li span{width:50%;height:30px;line-height:30px;position:static;float:left;display:inline-block;}
 .myOrderList .orderTotal li span:first-child{border-right:1px solid #ccc;}
-.myOrderList .orderTotal li span:last-child{text-indent:1rem;}
+.myOrderList .orderTotal li span:last-child{text-indent:1rem;text-align:center;}
