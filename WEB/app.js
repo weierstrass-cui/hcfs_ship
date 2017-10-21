@@ -192,8 +192,9 @@ var queryFunctions = {
 					sql += ' where b.id = ' + this.uid;
 				}
 				sql += ') d on c.id = d.rid';
+				sql += ' order by c.id';
 				sql += ') f on e.id = f.rid';
-				sql += ' group by name, type';
+				sql += ' group by e.name, f.type';
 			connection.query(sql, function(selectErr, selectResult){
 				if( selectErr ){
 					return;
