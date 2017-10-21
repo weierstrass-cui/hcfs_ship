@@ -1,7 +1,21 @@
 <div id="logs">
     <span class="location">{{currentUser.username}}</span>
     <div class="myOrderList">
-        <span class="myOrderListHeader">预订历史</span>
+        <span class="myOrderListHeader">预订总览</span>
+        <ul class="orderTotal">
+            <li>
+                <span>房型</span>
+                <span>数量</span>
+            </li>
+            <li ng-repeat="item in orderTotal">
+                <span>{{item.name}} {{item.type}}人间</span>
+                <span>{{item.total}}</span>
+            </li>
+        </ul>
+        <span class="myOrderListFooter"></span>
+    </div>
+    <div class="myOrderList">
+        <span class="myOrderListHeader">预订记录</span>
         <ul>
             <li ng-repeat="item in orderList">
                 {{item.time}}<br />

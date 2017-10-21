@@ -142,6 +142,11 @@
 		function($scope, $mainService, $storage){
 			var user = JSON.parse($storage.getLocalStorage('HCFS_user'));
 			$scope.currentUser = user;
+			$mainService.getOrderTotal({
+				uid: user.uid
+			}, function(res){
+				$scope.orderTotal = res;
+			});
 			$mainService.getOrderLogs({
 				uid: user.uid
 			}, function(res){

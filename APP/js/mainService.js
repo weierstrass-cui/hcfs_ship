@@ -16,6 +16,9 @@
 			},
 			getOrderLogs: function(json, callback){
 				request.post('/getOrderLogs', json, callback);
+			},
+			getOrderTotal: function(json, callback){
+				request.post('/getOrderTotal', json, callback);
 			}
 		}
 	}]);

@@ -116,3 +116,7 @@ input[type="date"].emptyDate:before, input.localDateTime.emptyDate:before{ conte
 .popWin .popWinMain .popWinContral{border-top:1px solid #ccc;}
 .popWin .popWinContral a{height:40px;line-height:40px;width:50%;display:inline-block;float:left;text-align:center;font-size:1.6rem;}
 .popWin .popWinContral a:first-child{border-right:1px solid #ccc;}
+.myOrderList .orderTotal li{width:100%;overflow:hidden;height:30px;}
+.myOrderList .orderTotal li span{width:50%;height:30px;line-height:30px;position:static;float:left;display:inline-block;}
+.myOrderList .orderTotal li span:first-child{border-right:1px solid #ccc;}
+.myOrderList .orderTotal li span:last-child{text-indent:1rem;}
