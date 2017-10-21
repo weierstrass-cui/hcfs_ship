@@ -11,7 +11,9 @@
     </ul>
     <ul>
         <li ng-repeat="item in orderLogList">
-            {{item.city}} {{item.time}} 预订{{item.name}} {{item.type}}人间，{{item.order}}间
+            {{item.city}} {{item.time}}<br />
+            预订{{item.name}} {{item.type}}人间
+            <span class="orderNum">{{item.order}}间</span>
         </li>
     </ul>
 </div>

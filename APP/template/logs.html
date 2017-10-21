@@ -4,7 +4,9 @@
         <span class="myOrderListHeader">预订历史</span>
         <ul>
             <li ng-repeat="item in orderList">
-                {{item.city}} {{item.time}} 预订{{item.name}} {{item.type}}人间，{{item.order}}间
+                {{item.time}}<br />
+                预订{{item.name}} {{item.type}}人间
+                <span>{{item.order}}间</span>
             </li>
         </ul>
         <span class="myOrderListFooter"></span>
