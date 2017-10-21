@@ -185,16 +185,16 @@ var queryFunctions = {
 		try{
 			var connection = createConnection();
 			var sql = 'select f.city, e.name, f.type, sum(f.order) as total from hcfs_room e join (';
-				sql += 'select c.rid, c.type, d.city, d.order, d.time from hcfs_room_count c join (';
+				sql += 'select c.id, c.rid, c.type, d.city, d.order, d.time from hcfs_room_count c join (';
 				sql += 'select b.city, a.rid, a.order, a.time from hcfs_orders a ';
 				sql += '	join hcfs_user b on a.uid = b.id';
 				if( this.uid ){
 					sql += ' where b.id = ' + this.uid;
 				}
 				sql += ') d on c.id = d.rid';
-				sql += ' order by c.id';
 				sql += ') f on e.id = f.rid';
 				sql += ' group by e.name, f.type';
+				sql += ' order by f.id';
 			connection.query(sql, function(selectErr, selectResult){
 				if( selectErr ){
 					return;
