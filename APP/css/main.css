@@ -89,11 +89,11 @@ input[type="date"].emptyDate:before, input.localDateTime.emptyDate:before{ conte
 #login .submit{width:80%;margin:0 auto;display:block;height:40px;background:#fff;color:#002f62;border-radius:5px;text-align:center;line-height:40px;font-size:1.6rem;}
 
 
-#product{background:url(../images/productsBg.jpg) no-repeat;padding-top:3rem;width:100%;height:100%;background-size:100%;position:relative;overflow:hidden;overflow-y:scroll;}
-.roomConfig{width:90%;margin:0 auto 1rem;font-size:1.4rem;}
-.roomConfig .roomConfigHeader{background:url(../images/roomConfigHeader.png) no-repeat;background-size:100%;width:100%;display:block;color:#fff;text-align:center;padding:0.5rem 0 0;}
-.roomConfig .roomConfigFooter{background:url(../images/roomConfigFooter.png) no-repeat;background-size:100%;width:100%;display:block;height:20px;}
-.roomConfig ul{background:url(../images/roomConfigRepeat.png) repeat-y;padding:1.5rem 1.5rem 0;background-size:100%;width:100%;display:block;}
+#product, #logs{background:url(../images/productsBg.jpg) no-repeat;padding-top:3rem;width:100%;height:100%;background-size:100%;position:relative;overflow:hidden;overflow-y:scroll;}
+.roomConfig, .myOrderList{width:90%;margin:0 auto 1rem;font-size:1.4rem;}
+.roomConfig .roomConfigHeader, .myOrderList .myOrderListHeader{background:url(../images/roomConfigHeader.png) no-repeat;background-size:100%;width:100%;display:block;color:#fff;text-align:center;padding:0.5rem 0 0;}
+.roomConfig .roomConfigFooter, .myOrderList .myOrderListFooter{background:url(../images/roomConfigFooter.png) no-repeat;background-size:100%;width:100%;display:block;height:20px;}
+.roomConfig ul, .myOrderList ul{background:url(../images/roomConfigRepeat.png) repeat-y;padding:1.5rem 1.5rem 0;background-size:100%;width:100%;display:block;}
 .roomConfig ul li{width:100%;overflow:hidden;height:50px;}
 .roomConfig ul li:last-child{margin-bottom:0;}
 .roomConfig ul li .roomName{width:75px;height:30px;line-height:30px;margin-right:2rem;background:#fff;border-radius:10px;float:left;display:inline-block;padding-left:1.5rem;}
@@ -101,11 +101,13 @@ input[type="date"].emptyDate:before, input.localDateTime.emptyDate:before{ conte
 .roomConfig ul li .numSet{width:120px;float:right;display:inline-block;text-align:right;}
 .roomConfig ul li .numSet input{background:#fff;width:40px;height:30px;text-align:center;color:#000;border:1px solid #fff;font-size:1.6rem;}
 .roomConfig ul li .numSet a{background:#fff;width:30px;height:30px;line-height:30px;text-align:center;display:inline-block;color:#000;font-size:1.6rem;border-radius:5px;} 
+.myOrderList ul li{border:1px solid #ccc;border-bottom:0 none;height:30px;line-height:30px;color:#fff;font-size:1.4rem;}
+.myOrderList ul li:last-child{border-bottom:1px solid #ccc;}
 .jiange{width:50%;display:block;margin:0 auto 1rem;}
-#product .submit{width:90%;margin:0 auto 1rem;position:relative;display:block;text-align:center;}
-#product .submit img{width:100%;}
-#product .submit span{position:absolute;width:50px;height:30px;line-height:30px;display:block;top:50%;left:50%;margin:-15px 0 0 -25px;font-size:1.6rem;color:#5f3e20;}
-#product .location{background:url(../images/location.png) no-repeat;position:absolute;color:#999;right:2rem;top:1rem;font-size:1.6rem;height:25px;line-height:25px;background-size:auto 100%;text-indent:1.8rem;font-weight:bold;}
+#product .submit, #logs .submit{width:90%;margin:0 auto 1rem;position:relative;display:block;text-align:center;}
+#product .submit img, #logs .submit img{width:100%;}
+#product .submit span, #logs .submit span{position:absolute;width:100px;height:30px;line-height:30px;display:block;top:50%;left:50%;margin:-15px 0 0 -50px;font-size:1.6rem;color:#5f3e20;}
+#product .location, #logs .location{background:url(../images/location.png) no-repeat;position:absolute;color:#999;right:2rem;top:1rem;font-size:1.6rem;height:25px;line-height:25px;background-size:auto 100%;text-indent:1.8rem;font-weight:bold;}
 .popWin{background:rgba(0,0,0,0.5);width:100%;height:100%;position:fixed;top:0;left:0;}
 .popWin .popWinMain{background:#fff;border-radius:5px;border:1px solid #ccc;width:70%;position:fixed;left:50%;margin-left:-35%;top:30%;overflow:hidden;}
 .popWin .popWinMain .title{font-size:1.6rem;color:#999;height:40px;line-height:40px;text-indent:1rem;border-bottom:1px solid #ccc;}

@@ -1,0 +1,15 @@
+<div id="logs">
+    <span class="location">{{currentUser.username}}</span>
+    <div class="myOrderList">
+        <span class="myOrderListHeader">预订历史</span>
+        <ul>
+            <li ng-repeat="item in orderList">
+                {{item.city}} {{item.time}} 预订{{item.name}} {{item.type}}人间，{{item.order}}间
+            </li>
+        </ul>
+        <span class="myOrderListFooter"></span>
+    </div>
+    <a href="javascript://" class="submit" onclick="history.go(-1);">
+        <img src="./images/submit.png" /><span>返回</span>
+    </a>
+</div>

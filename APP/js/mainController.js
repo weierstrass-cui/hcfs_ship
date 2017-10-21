@@ -138,5 +138,16 @@
 			}
 		}
 	]);
+	mainCtrl.controller('logsController', ['$scope', '$mainService', '$storage',
+		function($scope, $mainService, $storage){
+			var user = JSON.parse($storage.getLocalStorage('HCFS_user'));
+			$scope.currentUser = user;
+			$mainService.getOrderLogs({
+				uid: user.uid
+			}, function(res){
+				$scope.orderList = res;
+			});
+		}
+	]);
 })();
 
