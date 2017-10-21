@@ -145,6 +145,9 @@
 			$mainService.getOrderLogs({
 				uid: user.uid
 			}, function(res){
+				for(var i in res){
+					res[i].time = new Date(res[i].time - 0).toJSON();
+				}
 				$scope.orderList = res;
 			});
 		}
