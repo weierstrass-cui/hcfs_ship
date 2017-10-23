@@ -161,7 +161,7 @@ var queryFunctions = {
 				sql += 'select b.city, a.rid, a.order, a.time from hcfs_orders a ';
 				sql += '	join hcfs_user b on a.uid = b.id';
 				if( this.uid ){
-					sql += ' where b.id = ' + this.uid;
+					sql += (' where b.id = ' + this.uid);
 				}
 				sql += ') d on c.id = d.rid';
 				sql += ') f on e.id = f.rid';
@@ -189,7 +189,7 @@ var queryFunctions = {
 				sql += 'select b.city, a.rid, a.order, a.time from hcfs_orders a ';
 				sql += '	join hcfs_user b on a.uid = b.id';
 				if( this.uid ){
-					sql += ' where b.id = ' + this.uid;
+					sql += (' where b.id = ' + this.uid);
 				}
 				sql += ') d on c.id = d.rid';
 				sql += ') f on e.id = f.rid';
